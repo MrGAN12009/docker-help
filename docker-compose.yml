@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Основное Flask приложение
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Монтируем код для разработки (можно убрать в продакшене)
+      - .:/app
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Nginx для обратного прокси и статических файлов
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./static:/var/www/static:ro
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Redis для кэширования (опционально)
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  redis_data: 

@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты - Наша Компания{% endblock %}
+
+{% block content %}
+<!-- Contacts Hero -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 fw-bold text-primary mb-4">Свяжитесь с нами</h1>
+                <p class="lead mb-4">
+                    Готовы обсудить ваш проект? Мы всегда рады новым возможностям для сотрудничества.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info & Form -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <h2 class="fw-bold mb-4">Наши контакты</h2>
+                <div class="contact-info">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Адрес</h5>
+                            <p class="text-muted mb-0">г. Москва, ул. Тверская, д. 1<br>Бизнес-центр "Современный"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-phone fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Телефон</h5>
+                            <p class="text-muted mb-0">+7 (495) 123-45-67<br>+7 (495) 123-45-68</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Email</h5>
+                            <p class="text-muted mb-0">info@nashakompaniya.ru<br>support@nashakompaniya.ru</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="contact-icon me-3">
+                            <i class="fas fa-clock fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Время работы</h5>
+                            <p class="text-muted mb-0">Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="mt-5">
+                    <h5 class="mb-3">Мы в социальных сетях</h5>
+                    <div class="social-links">
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                            <i class="fab fa-vk"></i> VK
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold mb-4">Отправить сообщение</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">Имя *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Фамилия</label>
+                                    <input type="text" class="form-control" id="lastName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Телефон</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-12">
+                                    <label for="company" class="form-label">Компания</label>
+                                    <input type="text" class="form-control" id="company">
+                                </div>
+                                <div class="col-12">
+                                    <label for="service" class="form-label">Интересующая услуга</label>
+                                    <select class="form-select" id="service">
+                                        <option value="">Выберите услугу</option>
+                                        <option value="web">Веб-разработка</option>
+                                        <option value="mobile">Мобильная разработка</option>
+                                        <option value="analytics">Аналитика данных</option>
+                                        <option value="cloud">Облачные решения</option>
+                                        <option value="security">Кибербезопасность</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Сообщение *</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Опишите ваш проект или задайте вопрос..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            Я согласен с <a href="#" class="text-primary">политикой конфиденциальности</a> *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Отправить сообщение
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Как нас найти</h2>
+                <p class="lead text-muted">Мы находимся в центре Москвы</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-0">
+                        <div class="map-placeholder text-center py-5">
+                            <i class="fas fa-map fa-5x text-primary opacity-25 mb-3"></i>
+                            <h5>Интерактивная карта</h5>
+                            <p class="text-muted">Здесь будет встроена карта с нашим местоположением</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Часто задаваемые вопросы</h2>
+                <p class="lead text-muted">Ответы на популярные вопросы</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                Сколько времени занимает разработка проекта?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Время разработки зависит от сложности проекта. Простой сайт может быть готов за 2-4 недели, 
+                                а сложное веб-приложение может занять 3-6 месяцев. Мы всегда предоставляем точную оценку 
+                                сроков на этапе планирования.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Предоставляете ли вы техническую поддержку после запуска?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Да, мы предлагаем различные варианты технической поддержки и обслуживания проектов. 
+                                Это включает мониторинг, обновления, резервное копирование и техническую поддержку.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Работаете ли вы с удаленными клиентами?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Конечно! Мы успешно работаем с клиентами из разных городов и стран. 
+                                Используем современные инструменты для удаленного сотрудничества и всегда на связи.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
